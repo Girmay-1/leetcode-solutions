@@ -1,0 +1,6 @@
+
+F
+java:S5413!")Verify that "remove()" is used correctly.(§ô‘à8ùùÓ‘Ü1
+L	java:S106*"+Replace this use of System.out by a logger.(õ„Øşÿÿÿÿ8âÀĞ‘Ü1
+L	java:S106,"+Replace this use of System.out by a logger.(ã¿¢Ôùÿÿÿÿ8ãÀĞ‘Ü1
+]	java:S125/"<This block of commented-out lines of code should be removed.(‘ğ¾¥ıÿÿÿÿ8äÀĞ‘Ü1

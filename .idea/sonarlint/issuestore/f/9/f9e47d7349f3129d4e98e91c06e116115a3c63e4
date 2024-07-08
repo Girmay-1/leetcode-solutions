@@ -1,0 +1,19 @@
+
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(áÇ«úÿÿÿÿ8Ê‡ºïÓ1
+G	java:S106K"+Replace this use of System.out by a logger.(”Øò¨8Ö‡ºïÓ1
+_
+java:S1854f"=Remove this useless assignment to local variable "tFilePath".(ëÿœ’ûÿÿÿÿ8Û‡ºïÓ1
+Y
+java:S1854e"=Remove this useless assignment to local variable "sFilePath".(ö†ÍG8Û‡ºïÓ1
+]
+java:S1075e"ARefactor your code to get this URI from a customizable parameter.(ö†ÍG8İ‡ºïÓ1
+J
+java:S1481e".Remove this unused "sFilePath" local variable.(ö†ÍG8Ş‡ºïÓ1
+c
+java:S1075f"ARefactor your code to get this URI from a customizable parameter.(ëÿœ’ûÿÿÿÿ8Ş‡ºïÓ1
+P
+java:S1481f".Remove this unused "tFilePath" local variable.(ëÿœ’ûÿÿÿÿ8Ş‡ºïÓ1
+L	java:S106j"+Replace this use of System.out by a logger.(³×ıÿÿÿÿ8ß‡ºïÓ1
+]
+java:S1144R";Remove this unused private "readLongStringFromFile" method.(¿Ûßşıÿÿÿÿ8à‡ºïÓ1

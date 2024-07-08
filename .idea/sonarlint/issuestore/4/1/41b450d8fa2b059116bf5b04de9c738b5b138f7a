@@ -1,0 +1,14 @@
+
+f
+java:S1192="IDefine a constant instead of duplicating this literal "Median: " 5 times.(»ÃÆÔ8–ìÈµñ1
+o
+java:S3776	"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ùşë‹8éîÈµñ1
+Š
+java:S2234"hParameters to findMedianSortedArrays have the same names but not the same order as the method arguments.(—Ö Ãûÿÿÿÿ8ìîÈµñ1
+X	java:S125"<This block of commented-out lines of code should be removed.(éëíà8íîÈµñ1
+X	java:S125"<This block of commented-out lines of code should be removed.(®ä¾š8îîÈµñ1
+G	java:S106="+Replace this use of System.out by a logger.(»ÃÆÔ8ñîÈµñ1
+G	java:S106A"+Replace this use of System.out by a logger.(üèĞ¤8ñîÈµñ1
+G	java:S106E"+Replace this use of System.out by a logger.(Ÿ¦§Ï8òîÈµñ1
+G	java:S106I"+Replace this use of System.out by a logger.(²İ¾ì8óîÈµñ1
+G	java:S106M"+Replace this use of System.out by a logger.(»ÃÆÔ8ôîÈµñ1

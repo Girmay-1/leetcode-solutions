@@ -1,0 +1,12 @@
+
+e
+java:S3824`"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(ý¡óÙ8ù°©†é1
+]	java:S125G"<This block of commented-out lines of code should be removed.(¿«ÆÙþÿÿÿÿ8€±©†é1
+M	java:S106’"+Replace this use of System.out by a logger.(‹ÈÐúÿÿÿÿ8Š±©†é1
+H	java:S106œ"+Replace this use of System.out by a logger.(ÿ³Êè8¦¢Ü†é1
+H	java:S106ž"+Replace this use of System.out by a logger.(ã™Ðª8êÐß†é1
+H	java:S106£"+Replace this use of System.out by a logger.(ÿ³Êè8äçâ†é1
+Y
+java:S1128"7Remove this unused import 'javax.sound.midi.Soundbank'.(µÊøÿÿÿÿ8€´Þ†é1
+Q
+java:S1128"/Remove this unused import 'java.sql.SQLOutput'.(ê¤òÃùÿÿÿÿ8€´Þ†é1

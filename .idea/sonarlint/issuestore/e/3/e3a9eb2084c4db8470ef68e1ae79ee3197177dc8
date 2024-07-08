@@ -1,0 +1,9 @@
+
+^
+java:S4973$"<Strings and Boxed types should be compared using "equals()".(Š¦œ¶úÿÿÿÿ8ğÕ·¿Ó1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(áÇ«úÿÿÿÿ8Ç×·¿Ó1
+T
+java:S1854D"7Remove this useless assignment to local variable "sol".(ÕÈğÀ8Ï×·¿Ó1
+E
+java:S1481D"(Remove this unused "sol" local variable.(ÕÈğÀ8á×·¿Ó1
