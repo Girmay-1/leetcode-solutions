@@ -1,4 +1,4 @@
-package algorithms_and_data_structures.backtracking.ranges;
+package algorithms_and_data_structures.ranges;
 
 import java.util.ArrayList;
 import java.util.List;
