@@ -1,7 +1,0 @@
-
-0
-java:S1220""Move this file to a named package.
-Y
-java:S2166"CRename this class to remove "Exception" or correct its inheritance.(á±öÊ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(ò¦Ãýûÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ÄœªÜ
