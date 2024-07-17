@@ -1,7 +1,0 @@
-
-t	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8Ñ­ÉÕ1
-s	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK8èêÒÕ1
-r
-java:S1149
-"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(û›şöıÿÿÿÿ8È®ÉÕ1
-G	java:S1060"+Replace this use of System.out by a logger.(Æ‰²‘8ÀÕÕ1

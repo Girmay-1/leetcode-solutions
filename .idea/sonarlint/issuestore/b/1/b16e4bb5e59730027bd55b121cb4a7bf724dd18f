@@ -1,8 +1,0 @@
-
-R
-java:S1854"5Remove this useless assignment to local variable "n".(«çà¹8™ã†ˆý1
-C
-java:S1481"&Remove this unused "n" local variable.(«çà¹8œã†ˆý1
-A
-java:S1659:"Declare "t" on a separate line.(À˜Ì“úÿÿÿÿ8§ã†ˆý1
-L	java:S106<"+Replace this use of System.out by a logger.(®Ú¯¼ùÿÿÿÿ8¨ã†ˆý1
