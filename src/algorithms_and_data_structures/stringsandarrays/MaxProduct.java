@@ -1,9 +1,6 @@
 package algorithms_and_data_structures.stringsandarrays;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Given a string s, find two disjoint palindromic subsequences of s such that the product of their lengths is maximized.
@@ -18,7 +15,7 @@ public class MaxProduct {
     public int maxProduct(String s) {
 //        1. Generate all the subsequences in the string s
         int n = s.length();
-        List<String> subsequences = new ArrayList<>();
+        Map<Integer, Integer> maskStringLenMap = new HashMap<>();
 
         for(int i = 1; i < (1 << n); i++){ //we start from one because we want to ignore empty string
             StringBuilder sb = new StringBuilder();
@@ -29,53 +26,28 @@ public class MaxProduct {
             }
             String subsequence = sb.toString();
             if(checkPalindrome(subsequence)){
-                subsequences.add(subsequence);
+                maskStringLenMap.put(i,subsequence.length());
             }
 
         }
 
         //2. Compare all pairs of palindromic subsequences and calculate the maxProduct of their lengths
         int product = 0;
-        int size = subsequences.size();
+        List<Integer> maskList = new ArrayList<>(maskStringLenMap.keySet());
+        int size = maskList.size();
         for(int i = 0; i < size; i++){
             for(int j = i + 1; j < size; j++){
-                if(disjointStrings(s, subsequences.get(i), subsequences.get(j))){
-                    product = Math.max(product, subsequences.get(i).length() * subsequences.get(j).length());
+                if((maskList.get(i) & maskList.get(j)) == 0){
+                    product = Math.max(product, maskStringLenMap.get(maskList.get(i)) * maskStringLenMap.get(maskList.get(j)));
                 }
             }
         }
         return product;
     }
 
-    private boolean disjointStrings(String s, String s1, String s2) {
 
-        int[] count = new int[26];
-        for(char c : s.toCharArray()){
-            count[c - 'a']++;
-        }
-        for(char c: s1.toCharArray()){
-            count[c - 'a']--;
-        }
-        for(char c : s2.toCharArray()){
-            if(count[c - 'a'] <= 0){
-                return false;
-            }
-            count[ c - 'a']--;
-        }
-        return true;
-    }
 
-    private Set<Integer> getIndices(String s, String s1) {
-        int j = 0;
-        Set<Integer> indices = new HashSet<>();
-        for(int i = 0; i < s.length() && j < s1.length(); i++){
-            if(s.charAt(i) == s1.charAt(j)){
-                indices.add(i);
-                j++;
-            }
-        }
-        return indices;
-    }
+
 
     private boolean checkPalindrome(String subsequence) {
         int left = 0;
