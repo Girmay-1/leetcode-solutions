@@ -2,6 +2,7 @@ package algorithms_and_data_structures.stringsandarrays;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.stream.IntStream;
 
 /**
  * You are given a 0-indexed string array words having length n and containing 0-indexed strings.
@@ -93,5 +94,7 @@ public class MaximumPalindromesAfterOperation {
         System.out.println(solution.maxPalindromesAfterOperations(words1));  // Output: 0
         System.out.println(solution.maxPalindromesAfterOperations(words2));  // Output: 1
         System.out.println(solution.maxPalindromesAfterOperations(words3));  // Output: 1
+
+        
     }
 }
