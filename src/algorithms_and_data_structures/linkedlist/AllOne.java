@@ -65,8 +65,8 @@ public class AllOne {
             keyToBucket.remove(key);
             removeKeyFromBucket(currentBucket, key);
         }else{
-            Bucket newBucket = getPreviousBucket(currentBucket, currentBucket.count - 1);
-            newBucket.keys.add(key);
+            Bucket previousBucket = getPreviousBucket(currentBucket, currentBucket.count - 1);
+            previousBucket.keys.add(key);
             removeKeyFromBucket(currentBucket, key);
         }
 
@@ -96,7 +96,7 @@ public class AllOne {
             return currentBucket.prev;
         }
         Bucket newBucket = new Bucket(count);
-        addBucketAfter(newBucket, currentBucket);
+        addBucketAfter(newBucket, currentBucket.prev);
         return newBucket;
     }
 
