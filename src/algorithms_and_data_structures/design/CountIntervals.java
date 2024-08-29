@@ -1,5 +1,6 @@
 package algorithms_and_data_structures.design;
 
+
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -29,14 +30,14 @@ public class CountIntervals {
             left = entry.getKey();
             right = Math.max(right, entry.getValue());
             count -= entry.getValue() - entry.getKey() + 1;
-            intervals.remove(entry);
+            intervals.remove(entry.getKey());
         }
         //merge with intervals that follow this if there is an intersection.
         entry = intervals.ceilingEntry(left); // will give us an interval starts a left or just greater than left.
         while(entry != null && entry.getKey() <= right){
             right = Math.max(entry.getValue(), right);
             count -= entry.getValue() - entry.getKey() + 1;
-            intervals.remove(entry);
+            intervals.remove(entry.getKey());
             entry = intervals.ceilingEntry(left);
         }
         intervals.put(left, right);
