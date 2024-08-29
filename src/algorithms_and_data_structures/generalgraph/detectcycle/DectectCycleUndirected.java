@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * whenever we encounter a visited neighbor and that neighbor is not where we came for(parent), cycle exists.
+ * whenever we encounter a visited neighbor and that neighbor is not where we came from(parent), cycle exists.
  */
 public class DectectCycleUndirected {
     public boolean detectCycle(List<List<Integer>> graph, int numberOfVertices){
