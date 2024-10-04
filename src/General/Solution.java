@@ -6,30 +6,28 @@ import java.util.Queue;
 
 class Solution {
     public int solution(int U, int[] weights) {
+        //turned back car can be the current car or the car after the current car.
         int[] dp = new int[weights.length];
-
-        for (int i = weights.length -1; i >= 0; i--) { //traverse back and count with or without current car and take min
-            // option1 - with current car
-            int currentWeightOnBridge = weights[i]; // weight on the bridge now
-            int turnBackCount = 0; //count how may cars to turn back to reach the next car that is allowed on the bridge with the current car
-            int turnBackCountAtAllowedCar = 0; //turn back count at the allowed car (previously computed already, can be found in dp array)
-            for (int j = i + 1; j <= weights.length -1; j++){
-                if(currentWeightOnBridge + weights[j] <= U){//allowed found
-                    turnBackCountAtAllowedCar = dp[j];
+        for(int i = weights.length - 1; i >= 0; i--){
+            int currentCarWeight = weights[i];
+            int option1 = 1 + (i + 1 < (weights.length - 1)? dp[i + 1]: 0); //current car turns back;
+            int returnedCarsAtAllowedCar = 0;
+            int turnedBackCount = 0;
+            for(int j = i + 1; j < weights.length; j++){
+                if(currentCarWeight + weights[j] <= U){
+                    returnedCarsAtAllowedCar = dp[j];
                     break;
-                } else {//turn back
-                    turnBackCount++;
+                }else{
+                    turnedBackCount++;
+
                 }
             }
-            int option1 = turnBackCount + turnBackCountAtAllowedCar;
 
-            // option2 - without current car - dp of next cell (on right hand side - previously processed) if exists
-            int option2 = 1 + ((i + 1 <= weights.length -1) ? dp[i+1] : 0);
+            int option2 = returnedCarsAtAllowedCar + turnedBackCount;
 
-            dp[i] = Math.min(option1, option2);
+            dp[i] = Math.min(option2, option1);
         }
         return dp[0];
-
     }
 
     public static void main(String[] args) {
@@ -46,4 +44,5 @@ class Solution {
         int[] weight3 = {3, 4, 3, 1};
         System.out.println(sol.solution(U3, weight3)); // Output: 0
     }
+
 }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * if we encounter a node that's in visiting state, then there is a cycle. We can use DFS with three states, visted, visiting, unvisited.
+ * if we encounter a node that's in visiting state, then there is a cycle. We can use DFS with three states, visited, visiting, unvisited.
  */
 public class DetectCycleDirected {
     enum State {
