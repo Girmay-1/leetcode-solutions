@@ -5,6 +5,22 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * You are given an integer n which is the length of a 0-indexed array nums, and a 0-indexed 2D-array ranges, which is a list of sub-ranges of nums (sub-ranges may overlap).
+ *
+ * Each row ranges[i] has exactly 2 cells:
+ *
+ * ranges[i][0], which shows the start of the ith range (inclusive)
+ * ranges[i][1], which shows the end of the ith range (inclusive)
+ * These ranges cover some cells of nums and leave some cells uncovered. Your task is to find all of the uncovered ranges with maximal length.
+ *
+ * Return a 2D-array answer of the uncovered ranges, sorted by the starting point in ascending order.
+ *
+ * By all of the uncovered ranges with maximal length, we mean satisfying two conditions:
+ *
+ * Each uncovered cell should belong to exactly one sub-range
+ * There should not exist two ranges (l1, r1) and (l2, r2) such that r1 + 1 = l2;
+ */
 public class UncoveredRanges {
     public int[][] findMaximalUncoveredRanges(int n, int[][] ranges) {
         if (ranges.length == 0) {
