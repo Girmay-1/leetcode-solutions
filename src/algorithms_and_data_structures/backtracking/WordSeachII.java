@@ -19,71 +19,66 @@ import java.util.*;
  * All the strings of words are unique.
  */
 public class WordSeachII {
-    class Node{
-        boolean isEndOfWord;
-        Map<Character, Node> children;
-        Node(){
-            isEndOfWord = false;
-            children = new HashMap<>();
-        }
+    class TrieNode{
+        TrieNode[] children = new TrieNode[26];
+        String word = null;
     }
 
-    private  Node insertWords(String[] words){
-        Node root = new Node();
-        for(String word: words){
-            Node current = root;
-            for(char c : word.toCharArray()){
-                if(!current.children.containsKey(c)){
-                    current.children.put(c, new Node());
-                }
-                current = current.children.get(c);
-            }
-            current.isEndOfWord = true;
-        }
-        return root;
-    }
+
 
     public List<String> findWords(char[][] board, String[] words){
-        Set<String> solution = new HashSet<>();
+        //populate the TrieNode
+        TrieNode root = new TrieNode();
+        for(String word: words){
+            TrieNode currentNode = root;
+            for(char c: word.toCharArray()){
+                int index = c - 'a';
+                if(currentNode.children[index] == null){
+                    currentNode.children[index] = new TrieNode();
+                }
+                currentNode = currentNode.children[index];
+            }
+            currentNode.word = word;
+        }
 
-        Node current = insertWords(words);
+        List<String> solution = new ArrayList<>();
 
-        int m = board.length;
-        int n = board[0].length;
-
-        boolean[][] visited = new boolean[m][n];
-
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
-                dfs(i, j, "", current, visited, solution,  board);
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[0].length; j++){
+                dfs(i, j, root, solution, board);
             }
         }
 
-        return new ArrayList<>(solution);
+        return  solution;
     }
 
-    private  void dfs(int i, int j, String word, Node current, boolean[][] visited, Set<String> solution, char[][] board){
-        if(current.isEndOfWord){
-            solution.add(word);
-        }
-        if(i < 0 || j < 0 || i > board.length - 1 || j > board[0].length -1  || visited[i][j] || !current.children.containsKey(board[i][j])){
+    private void dfs(int i, int j, TrieNode currentNode, List<String> solution, char[][] board) {
+        if(i < 0 || i >= board.length || j < 0 || j >= board[0].length ||
+            board[i][j] == '#' || currentNode.children[board[i][j] - 'a'] == null){
             return;
         }
-        visited[i][j] = true;
-        current = current.children.get(board[i][j]);
-        word += board[i][j];
+        char c = board[i][j];
+        currentNode = currentNode.children[c - 'a'];
+        if(currentNode.word != null){
+            solution.add(currentNode.word);
+            currentNode.word = null; //to avoid duplicates since we are using list (set would have removed this)
+        }
+        board[i][j] = '#'; //mark visited;
 
-        dfs(i + 1, j , word, current, visited, solution, board);
-        dfs(i - 1, j , word, current, visited, solution, board);
-        dfs(i , j + 1, word, current, visited, solution, board);
-        dfs(i , j - 1 , word, current, visited, solution, board);
+        dfs(i + 1, j, currentNode, solution, board);
+        dfs(i - 1, j, currentNode, solution, board);
+        dfs(i,j + 1, currentNode, solution, board);
+        dfs(i,j - 1, currentNode, solution, board);
 
-        visited[i][j] = false;
+        board[i][j] = c;
+
         /**
-         * time: O(L * N + m * n * 4 ^ L) , first term is for building the trie. Second term is for the recursion.
-         * space: O(N + L + m* n). : O(N) for building the trie. And O(L) for the recursion stack. We can also add the visited array of size m *n
+         * time: O(N * L) +O(M * N * L ^ 4) where L is the av. len of a word, M,N = number of words
+         * space: O(N * L) + O(L) (trie + recursive stack)
          */
+
     }
+
 
     public static void main(String[] args) {
         char[][] board = {
